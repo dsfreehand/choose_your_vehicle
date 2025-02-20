@@ -1,18 +1,13 @@
-// Importing Vehicle and Wheel classes
+// import the Vehicle, Motorbike, Car, Wheel, and AbleToTow classes/interfaces
 import Vehicle from './Vehicle.js';
+import Motorbike from './Motorbike.js';
 import Wheel from './Wheel.js';
+import AbleToTow from '../interfaces/AbleToTow.js';
 
 // Car class that extends Vehicle class
-class Car extends Vehicle {
+class Car extends Vehicle { // I realize now that by moving all of these to the vehicle class...I'm not really extending it...
   // Declare properties of the Car class
-  vin: string;
-  color: string;
-  make: string;
-  model: string;
-  year: number;
-  weight: number;
-  topSpeed: number;
-  wheels: Wheel[];
+  // moved these to the Vehicle class
 
   // Constructor for the Car class
   constructor(
@@ -26,7 +21,7 @@ class Car extends Vehicle {
     wheels: Wheel[]
   ) {
     // Call the constructor of the parent class, Vehicle
-    super();
+    super(vin, color, make, model, year, weight, topSpeed, wheels);
 
     // Initialize properties of the Car class
     this.vin = vin;
